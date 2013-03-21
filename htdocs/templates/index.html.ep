@@ -1,0 +1,4 @@
+<h1>Unix epoch</h1>
+<p>
+    Server time is: <%= time %>
+</p>

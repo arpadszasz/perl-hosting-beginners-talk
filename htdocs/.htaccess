@@ -1,0 +1,14 @@
+AddHandler cgi-script .pl
+Options +ExecCGI
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ app.pl/$1 [L,QSA]
+
+DirectoryIndex app.pl
+
+<FilesMatch ".html.ep">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
